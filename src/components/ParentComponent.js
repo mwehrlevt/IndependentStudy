@@ -9,7 +9,6 @@ import Hours from "./Hours"
 
 class ParentComponent extends React.Component {
     state = {
-        location: "",
         mileRadius: "",
         checkedPrice: [
           {
@@ -103,16 +102,28 @@ class ParentComponent extends React.Component {
         ]      
       }
 
+      handleChange = (id) => {
+        this.setState(prevState => ({
+          checkedCuisine: prevState.checkedCuisine.map(cuisine => {
+            if (cuisine.id === id) {
+              return {
+                ...cuisine,
+                completed: !cuisine.completed,
+              }
+            }
+            return cuisine
+          }),
+        }))
+      };
+
   render() {
     return (
-      <div>
-          <Header/>
-          <SearchInput location={this.state.location.completed} />
-          <Cuisine cuisine = {this.state.checkedCuisine.completed} />
-          <Price price = {this.state.checkedPrice.completed} />
-          <Reviews reviews = {this.state.checkedReviews.completed} />
-          <MileRadius radius = {this.state.mileRadius.completed} />
-          <Hours hours = {this.state.checkedHours.completed} />
+      <div> 
+        <Header />
+        <SearchInput />
+      <Cuisine 
+      checkedCuisineProps = {this.state.checkedCuisine} 
+      handleChangeProps={this.handleChange} />
       </div>
     )
   }
