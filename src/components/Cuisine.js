@@ -2,16 +2,18 @@
 
 import React from "react"
 
-class Cuisine extends React.Component {
-  render() {
+function Cuisine(props) {
     return (
+
       <ul>
-        {this.props.checkedCuisine.map(cuisine => (
-          <li>{cuisine.title}</li>
-        ))}
+        {props.checkedCuisineProps.map(cuisine => (
+          <li> {cuisine.title} <input type="checkbox" checked={props.checkedCuisineProps.completed} 
+          onChange={() => props.handleChangeProps(props.checkedCuisineProps.id)}/> 
+          </li>
+          ))}
       </ul>
     )
-  }
 }
+
 
 export default Cuisine
