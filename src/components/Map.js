@@ -3,19 +3,19 @@ import { useState } from 'react'
 import GoogleMapReact from 'google-map-react'
 
 const Map = ({ center, zoom }) => {
-        return
-        (
-            <div className="map">
-                <GoogleMapReact
-                    bootstrapURLKeys={{
-                        key: 'AIzaSyD0QZayhC9H4t2TMDAVOXKIGgaEJh6tKzQ'
-                    }}
-                    defaultCenter={center}
-                    defaultZoom={zoom}
-                >
-                </GoogleMapReact>
-            </div>
-        )
+    return
+    (
+        <div className="map">
+            <GoogleMapReact
+                bootstrapURLKeys={{
+                    key: 'AIzaSyD0QZayhC9H4t2TMDAVOXKIGgaEJh6tKzQ'
+                }}
+                defaultCenter={center}
+                defaultZoom={zoom}
+            >
+            </GoogleMapReact>
+        </div>
+    )
 }
 
 
