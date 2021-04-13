@@ -11,6 +11,7 @@ import Map from "./Map"
 class ParentComponent extends React.Component {
     state = {
         mileRadius: "",
+        search: "",
         checkedPrice: [
           {
             id: 1,
@@ -103,7 +104,7 @@ class ParentComponent extends React.Component {
         ]      
       }
 
-      handleChange = (id) => {
+      handleChangeCuisine = (id) => {
         this.setState(prevState => ({
           checkedCuisine: prevState.checkedCuisine.map(cuisine => {
             if (cuisine.id === id) {
@@ -117,15 +118,18 @@ class ParentComponent extends React.Component {
         }))
       };
 
+      submitSearch = title => {
+        console.log(title);
+      };
+
   render() {
     return (
       <div> 
         <Header />
-        <SearchInput />
+        <SearchInput searchResturantProps={this.submitSearch}/>
       <Cuisine 
       checkedCuisineProps = {this.state.checkedCuisine} 
-                handleChangeProps={this.handleChange} />
-        <Map/>
+      handleChangeProps={this.handleChangeCuisine} />
       </div>
     )
   }

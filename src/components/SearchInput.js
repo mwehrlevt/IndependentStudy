@@ -1,10 +1,10 @@
 import React, { Component } from "react"
 
 class SearchInput extends Component {
-
-    state = {
-        title: ""
-      };
+  
+  state = {
+    title: ""
+  };
 
       onChange = e => {
         this.setState({
@@ -12,9 +12,18 @@ class SearchInput extends Component {
           });
       };
 
+      handleSubmit = e => {
+        e.preventDefault();
+        this.props.searchResturantProps(this.state.title);
+        this.setState({
+          title: ""
+        });
+      };
+
+
   render() {
     return (
-      <form>
+      <form onSubmit={this.handleSubmit}>
         <input type="text" placeholder="Search for resturant ..." value={this.state.title} onChange={this.onChange}/>
         <button>Submit</button>
       </form>
