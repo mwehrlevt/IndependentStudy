@@ -8,16 +8,15 @@ function MapApp() {
     useEffect(() => {
         const fetchEvents = async () => {
             setLoading(true)
-            const res = await fetch('https://maps.googleapis.com/maps/api/place/textsearch/xml?query=restaurants+in+Sydney&key=AIzaSyBejaZOfwWW5yspBtDdfzPAGKIShmNyY8M')
-            const {} = await res.json()
+            const res = await fetch('https://eonet.sci.gsfc.nasa.gov/api/v2.1/events')
+            const {events} = await res.json()
 
-            setEventData()
+            setEventData(events)
             setLoading(false)
         }
 
         fetchEvents()
 
-        console.log()
     }, [])
 
     return (
