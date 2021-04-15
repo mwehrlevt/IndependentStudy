@@ -1,9 +1,10 @@
 {
   "ExpandedNodes": [
     "",
+    "\\public",
     "\\src",
     "\\src\\components"
   ],
-  "SelectedNode": "\\src\\components\\Map.js",
+  "SelectedNode": "\\src\\components\\ParentComponent.js",
   "PreviewInSolutionExplorer": false
 }

@@ -7,6 +7,7 @@ import Reviews from "./Reviews"
 import MileRadius from "./MileRadius"
 import Hours from "./Hours"
 import Map from "./Map"
+import MapApp from "./MapApp"
 
 class ParentComponent extends React.Component {
     state = {
@@ -130,6 +131,7 @@ class ParentComponent extends React.Component {
       <Cuisine 
       checkedCuisineProps = {this.state.checkedCuisine} 
       handleChangeProps={this.handleChangeCuisine} />
+      <MapApp />
       </div>
     )
   }
