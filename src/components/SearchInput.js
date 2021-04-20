@@ -17,7 +17,8 @@ class SearchInput extends Component {
         e.preventDefault();
         this.props.searchCoordinatesProps(this.state.title);
         this.setState({
-          title: ""
+          longitude: "",
+          latitude: ""
         });
       };
 
