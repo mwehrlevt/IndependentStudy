@@ -3,18 +3,19 @@ import React, { Component } from "react"
 class SearchInput extends Component {
   
   state = {
-    title: ""
+    longitude: "",
+    latitude: ""
   };
 
       onChange = e => {
         this.setState({
-            title: e.target.value
+          [e.target.name]: e.target.value,
           });
       };
 
       handleSubmit = e => {
         e.preventDefault();
-        this.props.searchResturantProps(this.state.title);
+        this.props.searchCoordinatesProps(this.state.title);
         this.setState({
           title: ""
         });
@@ -24,7 +25,19 @@ class SearchInput extends Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <input type="text" placeholder="Search for resturant ..." value={this.state.title} onChange={this.onChange}/>
+        <input type="text" 
+        placeholder="Longitude value" 
+        value={this.state.longitude}
+        name = "longitude" 
+        onChange={this.onChange}/>
+
+        <input
+        type="text"
+        placeholder="Latitude value"
+        value={this.state.latitude}
+        name="latitude"
+        onChange={this.onChange}
+        />
         <button>Submit</button>
       </form>
     )
