@@ -1,11 +1,8 @@
 import React from "react"
 import Header from "./Header"
 import SearchInput from "./SearchInput"
-import Cuisine from "./Cuisine"
-import Price from "./Price"
-import Reviews from "./Reviews"
+import NASAcheckboxes from "./NASAcheckboxes"
 import MileRadius from "./MileRadius"
-import Hours from "./Hours"
 import Map from "./Map"
 import MapApp from "./MapApp"
 
@@ -13,108 +10,40 @@ class ParentComponent extends React.Component {
     state = {
         mileRadius: "",
         search: "",
-        checkedPrice: [
+        checkedNASATypes: [
           {
             id: 1,
-            title: "$",
+            title: "Wildfires",
             completed: false
           },
           {
             id: 2,
-            title: "$$",
+            title: "Severe Storms",
             completed: false
           },
           {
             id: 3,
-            title: "$$$",
-            completed: false
-          }
-        ],
-        checkedHours: [
-          {
-            id: 1,
-            title: "Breakfast",
-            completed: false
-          },
-          {
-            id: 2,
-            title: "Lunch",
-            completed: false
-          },
-          {
-            id: 3,
-            title: "Dinner",
-            completed: false
-          }
-        ],
-        
-        checkedReviews: [
-          {
-            id: 1,
-            title: "OneStar",
-            completed: false
-          },
-          {
-            id: 2,
-            title: "TwoStar",
-            completed: false
-          },
-          {
-            id: 3,
-            title: "ThreeStar",
+            title: "Volcanos",
             completed: false
           },
           {
             id: 4,
-            title: "FourStar",
-            completed: false
-          },
-          {
-            id: 5,
-            title: "FiveStar",
-            completed: false
-          }
-
-        ],
-        checkedCuisine: [
-          {
-            id: 1,
-            title: "Italian",
-            completed: false
-          },
-          {
-            id: 2,
-            title: "Mexican",
-            completed: false
-          },
-          {
-            id: 3,
-            title: "American",
-            completed: false
-          },
-          {
-            id: 4,
-            title: "Asian",
-            completed: false
-          },
-          {
-            id: 5,
-            title: "Mediterranean",
+            title: "Sea and Lake Ice",
             completed: false
           }
         ]      
       }
 
-      handleChangeCuisine = (id) => {
+      handleChangeNASACheckBoxes = (id) => {
         this.setState(prevState => ({
-          checkedCuisine: prevState.checkedCuisine.map(cuisine => {
-            if (cuisine.id === id) {
+          checkedNASATypes: prevState.checkedNASATypes.map(type => {
+            if (type.id === id) {
               return {
-                ...cuisine,
-                completed: !cuisine.completed,
+                ...type,
+                completed: !type.completed,
               }
             }
-            return cuisine
+            return type
           }),
         }))
       };
@@ -127,10 +56,10 @@ class ParentComponent extends React.Component {
     return (
       <div> 
         <Header />
-        <SearchInput searchResturantProps={this.submitSearch}/>
-      <Cuisine 
-      checkedCuisineProps = {this.state.checkedCuisine} 
-      handleChangeProps={this.handleChangeCuisine} />
+        <SearchInput searchCoordinatesProps={this.submitSearch}/>
+      <NASAcheckboxes 
+      checkedNASAProps = {this.state.checkedNASATypes} 
+      handleChangeProps={this.handleChangeNASACheckBoxes} />
       <MapApp />
       </div>
     )
