@@ -3,7 +3,7 @@
 const Header = () => {
 	return (
 		<header>
-			<h1> Restaurant Search! </h1>
+			<h1> NASA Events Search</h1>
 		</header>
 	)
 }
