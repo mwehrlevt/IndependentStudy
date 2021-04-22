@@ -8,6 +8,11 @@ body {
     height: 100vh;
     position: relative;
 }
+
+.fire-icon {
+    font-size: 2rem;
+    color: darkorange;
+}
  
 ul {list-style-type: none;
 }

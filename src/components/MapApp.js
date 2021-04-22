@@ -21,8 +21,8 @@ function MapApp() {
 
     return (
         <div>
-            <h1>Map!!!</h1>
-            <Map />
+            <h1>NASA Events Map!!!</h1>
+            { !loading ? <Map eventData={eventData} /> : <h1>Loading...</h1> }
         </div>
     );
 }
