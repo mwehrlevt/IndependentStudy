@@ -10,6 +10,7 @@ class ParentComponent extends React.Component {
     state = {
         mileRadius: "",
         search: "",
+        
         checkedNASATypes: [
           {
             id: 1,
@@ -32,34 +33,36 @@ class ParentComponent extends React.Component {
             completed: false
           }
         ]      
-      }
-
-      handleChangeNASACheckBoxes = (id) => {
-        this.setState(prevState => ({
-          checkedNASATypes: prevState.checkedNASATypes.map(type => {
-            if (type.id === id) {
-              return {
-                ...type,
-                completed: !type.completed,
-              }
-            }
-            return type
-          }),
-        }))
       };
 
-      submitSearch = title => {
-        console.log(title);
+      handleChangeNASACheckBoxes = (id) => {
+        console.log("clicked", id);
+        this.setState(prevState => ({
+          checkedNASATypes: prevState.checkedNASATypes.map((type) => {
+            if (type.id === id) {
+              return {
+                ...type, completed: !type.completed,
+              }
+            }
+            return type;
+          })
+        }));
+      };
+
+      submitSearch = (latitude, longtitude) => {
+        console.log("input one", latitude);
+        console.log("input two",longtitude);
       };
 
   render() {
     return (
       <div> 
         <Header />
-        <SearchInput searchCoordinatesProps={this.submitSearch}/>
+        <SearchInput submitSearch = {this.submitSearch}/>
       <NASAcheckboxes 
       checkedNASAProps = {this.state.checkedNASATypes} 
-      handleChangeProps={this.handleChangeNASACheckBoxes} />
+      handleChangeProps={this.handleChangeNASACheckBoxes}
+      />
       <MapApp />
       </div>
     )
