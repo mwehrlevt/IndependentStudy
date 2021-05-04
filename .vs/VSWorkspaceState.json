@@ -1,10 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\public",
     "\\src",
     "\\src\\components"
   ],
-  "SelectedNode": "\\src\\components\\Map.js",
+  "SelectedNode": "\\src\\components\\SevereStormsLocationMarker.js",
   "PreviewInSolutionExplorer": false
 }
