@@ -12,17 +12,7 @@ const Map = ({ eventData, center, zoom }) => {
     const markers = eventData.map(ev => {
         // Severe Storm data
         if (ev.categories[0].id === 10) {
-            const stormsArray = ev.geometries
-
-            //return <SevereStormsLocationMarker lat={ev.geometries[0].coordinates[1]} lng={ev.geometries[0].coordinates[0]}
-            //    onClick={() => setLocationInfo({ id: ev.id, title: ev.title })} />
-
-            //storms.map((value, index) => {
-            //console.log(value.coordinates[1], value.coordinates[0])
-            //    return <SevereStormsLocationMarker lat={value.coordinates[1]} lng={value.coordinates[0]}
-            //        onClick={() => setLocationInfo({ id: ev.id, title: ev.title })} />
-            // })
-            return <SevereStormsLocationMarker storms={stormsArray}
+            return <SevereStormsLocationMarker lat={ev.geometries[0].coordinates[1]} lng={ev.geometries[0].coordinates[0]}
                 onClick={() => setLocationInfo({ id: ev.id, title: ev.title })} />
             
         }
@@ -39,12 +29,13 @@ const Map = ({ eventData, center, zoom }) => {
                 onClick={() => setLocationInfo({ id: ev.id, title: ev.title })} />
         }
 
-        // Volcano data
+        // Volcano data (point type)
         if (ev.categories[0].id === 12 && ev.geometries[0].type === "Point") {
             return <VolcanoLocationMarker lat={ev.geometries[0].coordinates[1]} lng={ev.geometries[0].coordinates[0]}
                 onClick={() => setLocationInfo({ id: ev.id, title: ev.title })} />
         }
 
+        // Volcano data (polygon type)
         if (ev.categories[0].id === 12 && ev.geometries[0].type === "Polygon") {
             return <VolcanoLocationMarker lat={ev.geometries[0].coordinates[0][0][1]} lng={ev.geometries[0].coordinates[0][0][0]}
                 onClick={() => setLocationInfo({ id: ev.id, title: ev.title })} />
