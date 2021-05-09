@@ -21,7 +21,7 @@ function MapApp() {
 
     return (
         <div>
-            <h1>NASA Events Map!!!</h1>
+            <h1>Map of Weather Events</h1>
             { !loading ? <Map eventData={eventData} /> : <h1>Loading...</h1> }
         </div>
     );
