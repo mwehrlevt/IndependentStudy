@@ -1,62 +1,99 @@
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  padding: 25px
-}
+    margin: 0;
+    font-family: Arial, sans-serif;
+    padding: 25px
+  }
+  
+  .map {
+      width: 75vw;
+      height: 75vh;
+      position: relative;
+      text-align: center;
+      padding-left: 125px;
+  }
+  
+  .fire-icon {
+      font-size: 2rem;
+      color: darkorange;
+  }
+  
+  .severe-storms-icon {
+  font-size: 2rem;
+  color: blue;
+  }
+  
+  .volcano-icon {
+      font-size: 2rem;
+      color: darkred;
+  }
+  
+  .sea-icon {
+      font-size: 2rem;
+      color: lightblue;
+  }
+  
+  .location-info {
+      position: absolute;
+      top: 50px;
+      right: 50px;
+      width: 250px;
+      min-height: 100px;
+      padding: 20px;
+      background-color: rgba(240, 242, 249, 0.7);
+      border-radius: 10px;
+      font-size: 16px;
+  }
+  
+  .location-info ul {
+      list-style-type: none;
+      padding: 0;
+  }
+  
+  .location-info li {
+      padding: 5px 0;
+  }
+   
+  ul {
+      list-style-type: none;
+  }
 
-.map {
-    width: 75vw;
-    height: 75vh;
-    position: relative;
-    text-align: center;
-    padding-left: 125px;
-}
+  ul li {
+      padding-bottom: 10px;
+  }
 
-.fire-icon {
-    font-size: 2rem;
-    color: darkorange;
-}
+  ul p {
+      line-height: 1.5em;
+  }
+  
+  h1 {
+      text-align: center;
+      background-color: lightblue;
+  }
 
-.severe-storms-icon {
-font-size: 2rem;
-color: blue;
-}
+  form {
+      padding-left: 39px;
+  }
 
-.volcano-icon {
-    font-size: 2rem;
-    color: darkred;
-}
+  button {
+      background-color: #008CBA;
+      border: none;
+      color: black;
+      text-align: center;
+      font-size: 16px;
+      padding: 8px 20px;
+      border-radius: 4px;
+      
+  }
 
-.sea-icon {
-    font-size: 2rem;
-    color: lightblue;
-}
+  form div {
+      padding-bottom: 15px;
+  }
 
-.location-info {
-    position: absolute;
-    top: 50px;
-    right: 50px;
-    width: 250px;
-    min-height: 100px;
-    padding: 20px;
-    background-color: rgba(240, 242, 249, 0.7);
-    border-radius: 10px;
+  form input {
     font-size: 16px;
-}
+    padding: 8px 20px;
+  }
 
-.location-info ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.location-info li {
-    padding: 5px 0;
-}
- 
-ul {list-style-type: none;
-}
-
-h1 {
-    text-align: center;
-    background-color: lightblue;
-}
+  form p {
+      padding-bottom: 10px;
+  }
