@@ -58,11 +58,11 @@ class ParentComponent extends React.Component {
     return (
       <div> 
         <Header />
-        <SearchInput submitSearch = {this.submitSearch}/>
       <NASAcheckboxes 
       checkedNASAProps = {this.state.checkedNASATypes} 
       handleChangeProps={this.handleChangeNASACheckBoxes}
       />
+      <SearchInput submitSearch = {this.submitSearch}/>
       <MapApp />
       </div>
     )
