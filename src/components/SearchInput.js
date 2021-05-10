@@ -62,7 +62,7 @@ class SearchInput extends Component {
   render() {
     return (
       <form onSubmit = {this.handleSubmit}>
-        <div>
+        <div1>
           <input 
             type = "number" 
             placeholder = "Longitude value" 
@@ -71,9 +71,9 @@ class SearchInput extends Component {
             onChange = {this.onChange}
           />
           <div> {this.state.longitudeError} </div>
-        </div>
+        </div1>
         
-        <div>
+        <div2>
           <input
             type="number"
             placeholder="Latitude value"
@@ -82,8 +82,10 @@ class SearchInput extends Component {
             onChange={this.onChange}
           />
           <div> {this.state.latitudeError} </div>
-        </div>
-        <button>Submit</button>
+        </div2>
+        <div3>
+          <button>Submit</button>
+        </div3>
       </form>
     )
   }
