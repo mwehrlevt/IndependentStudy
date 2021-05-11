@@ -94,6 +94,26 @@ body {
     padding: 8px 20px;
   }
 
-  form p {
-      padding-bottom: 10px;
-  }
+  .volcano-icon-pic {
+    font-size: 2rem;
+    color: darkred;
+    padding-left: 50px;
+}
+
+.sea-icon-pic {
+    font-size: 2rem;
+    color: lightblue; 
+    padding-left: 50px;
+}
+
+.fire-icon-pic{
+    font-size: 2rem;
+    color: darkorange;
+    padding-left: 50px;  
+}
+
+.severe-storms-icon-pic{
+    font-size: 2rem;
+    color: blue;
+    padding-left: 50px;
+}
