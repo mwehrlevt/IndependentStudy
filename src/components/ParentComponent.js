@@ -8,10 +8,10 @@ import MapApp from "./MapApp"
 
 class ParentComponent extends React.Component {
     state = {
-        mileRadius: "",
-        search: "",
+          longitude: "",
+          latitude: "",
         
-        checkedNASATypes: [
+      checkedNASATypes: [
           {
             id: 1,
             title: "Wildfires",
@@ -49,9 +49,16 @@ class ParentComponent extends React.Component {
         }));
       };
 
-      submitSearch = (latitude, longtitude) => {
-        console.log("input one", latitude);
-        console.log("input two",longtitude);
+      submitSearchLongitude = (long) => {
+        this.setState({
+          longitude: long,
+        });
+      };
+
+      submitSearchLatitude = (lat) => {
+        this.setState({
+          latitude: lat,
+        });
       };
 
   render() {
@@ -62,8 +69,8 @@ class ParentComponent extends React.Component {
       checkedNASAProps = {this.state.checkedNASATypes} 
       handleChangeProps={this.handleChangeNASACheckBoxes}
       />
-      <SearchInput submitSearch = {this.submitSearch}/>
-      <MapApp />
+      <SearchInput submitSearchLongitude = {this.submitSearchLongitude} submitSearchLatitude = {this.submitSearchLatitude}/>
+      <MapApp checkedNASAProps = {this.state.checkedNASATypes} longitudeProp = {this.state.longitude} latitudeProp = {this.state.latitude}/>
       </div>
     )
   }
