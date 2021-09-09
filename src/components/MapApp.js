@@ -1,12 +1,14 @@
 import Map from "./Map"
 import {useState, useEffect} from 'react'
 
-function MapApp(checkBoxes, longitudeProp, latitudeProp) {
+function MapApp(checkBoxes, longitude, latitude) {
     const [eventData, setEventData] = useState([])
     const [loading, setLoading] = useState(false)
-    
-    console.log(latitudeProp);
-    console.log(longitudeProp);
+
+    console.log("here")
+    console.log(latitude);
+    console.log(longitude);
+
     useEffect(() => {
         const fetchEvents = async () => {
             setLoading(true)
@@ -24,7 +26,7 @@ function MapApp(checkBoxes, longitudeProp, latitudeProp) {
     return (
         <div>
             <h1>Map of Weather Events</h1>
-            { !loading ? <Map checkBoxes={checkBoxes} eventData={eventData} longitude={longitudeProp} latitude={latitudeProp}/> : <h1>Loading...</h1> }
+            { !loading ? <Map checkBoxes={checkBoxes} eventData={eventData} longitude={longitude} latitude={latitude}/> : <h1>Loading...</h1> }
         </div>
     );
 }

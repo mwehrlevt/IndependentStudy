@@ -64,13 +64,14 @@ class ParentComponent extends React.Component {
   render() {
     return (
       <div> 
-        <Header />
-      <NASAcheckboxes 
-      checkedNASAProps = {this.state.checkedNASATypes} 
-      handleChangeProps={this.handleChangeNASACheckBoxes}
-      />
-      <SearchInput submitSearchLongitude = {this.submitSearchLongitude} submitSearchLatitude = {this.submitSearchLatitude}/>
-      <MapApp checkedNASAProps = {this.state.checkedNASATypes} longitudeProp = {this.state.longitude} latitudeProp = {this.state.latitude}/>
+          <Header />
+          <NASAcheckboxes 
+            checkedNASAProps = {this.state.checkedNASATypes} 
+            handleChangeProps={this.handleChangeNASACheckBoxes}
+          />
+            <SearchInput submitSearchLongitude={this.submitSearchLongitude} submitSearchLatitude={this.submitSearchLatitude} />
+            <p>{this.state.latitude}</p>
+          <MapApp checkedNASAProps = {this.state.checkedNASATypes} longitudeProp = {this.state.longitude} latitudeProp = {this.state.latitude}/>
       </div>
     )
   }

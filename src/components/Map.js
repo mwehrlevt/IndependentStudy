@@ -7,9 +7,10 @@ import SeaAndIceLocationMarker from './SeaAndIceLocationMarker'
 import VolcanoLocationMarker from './VolcanoLocationMarker'
 
 const Map = ({ checkBoxes, eventData, longitude, latitude, center, zoom }) => {
-    console.log(checkBoxes.checkedNASAProps[1].completed);
+    //console.log(checkBoxes.checkedNASAProps[1].completed);
     console.log(longitude);
-    //console.log(latitude);
+    console.log(latitude);
+    //console.log("hello")
     const [locationInfo, setLocationInfo] = useState(null)
 
     const markers = eventData.map(ev => {

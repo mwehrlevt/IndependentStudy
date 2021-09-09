@@ -46,8 +46,10 @@ class SearchInput extends Component {
     e.preventDefault();
     const isValid = this.validate();
     if (isValid){
-      this.props.submitSearch(this.state.longitude);
-      this.props.submitSearch(this.state.latitude);
+      //this.props.submitSearch(this.state.longitude);
+      //this.props.submitSearch(this.state.latitude);
+      this.props.submitSearchLongitude(this.state.longitude);
+      this.props.submitSearchLatitude(this.state.latitude);
       this.setState({
         longitudeError: "",
         latitudeError: "",
