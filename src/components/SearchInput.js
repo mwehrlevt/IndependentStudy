@@ -22,7 +22,7 @@ class SearchInput extends Component {
     if (!this.state.latitude){
       latitudeError = "Inputs cannot be blank";
     }
-    else if (this.state.latitude == 0){
+    else if (this.state.latitude === 0){
       latitudeError = "Input must be greater than one";
     }
     if (latitudeError){
@@ -32,7 +32,7 @@ class SearchInput extends Component {
     if (!this.state.longitude){
       longitudeError = "Inputs cannot be blank";
     }
-    else if (this.state.longitude == 0){
+    else if (this.state.longitude === 0){
       longitudeError = "Input must be greater than one";
     }
     if (longitudeError){
@@ -45,9 +45,8 @@ class SearchInput extends Component {
   handleSubmit = e => {
     e.preventDefault();
     const isValid = this.validate();
+    console.log(isValid);
     if (isValid){
-      //this.props.submitSearch(this.state.longitude);
-      //this.props.submitSearch(this.state.latitude);
       this.props.submitSearchLongitude(this.state.longitude);
       this.props.submitSearchLatitude(this.state.latitude);
       this.setState({
