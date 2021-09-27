@@ -2,8 +2,6 @@ import React from "react"
 import Header from "./Header"
 import SearchInput from "./SearchInput"
 import NASAcheckboxes from "./NASAcheckboxes"
-import MileRadius from "./MileRadius"
-import Map from "./Map"
 import MapApp from "./MapApp"
 
 class ParentComponent extends React.Component {
@@ -69,8 +67,10 @@ class ParentComponent extends React.Component {
             checkedNASAProps = {this.state.checkedNASATypes} 
             handleChangeProps={this.handleChangeNASACheckBoxes}
           />
-            <SearchInput submitSearchLongitude={this.submitSearchLongitude} submitSearchLatitude={this.submitSearchLatitude} />
-            <p>{this.state.latitude}</p>
+          <SearchInput 
+            submitSearchLongitude={this.submitSearchLongitude} 
+            submitSearchLatitude={this.submitSearchLatitude} 
+          />
           <MapApp checkedNASAProps = {this.state.checkedNASATypes} longitudeProp = {this.state.longitude} latitudeProp = {this.state.latitude}/>
       </div>
     )
